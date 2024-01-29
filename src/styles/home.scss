@@ -1,0 +1,148 @@
+.home-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0; /* Arka plan rengi */
+}
+
+.row {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  justify-content: center;
+  align-content: center;
+  margin-top: 15vh;
+}
+
+#tsparticles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  z-index: -1; /* if you use -1 you have to set to `"window"` the interactivity.detectsOn property */
+}
+
+:root {
+  --primary-color: #33383c;
+  --secondary-color: #33383c;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.Information {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  margin: auto;
+}
+
+.blue-bg-outer {
+  width: 29em;
+  height: 29em;
+  border-radius: 50%;
+  background: #33383c;
+  display: grid;
+  place-items: center;
+}
+
+.white-bg {
+  width: 25.875em;
+  height: 25.875em;
+  border-radius: 50%;
+  background: #fff;
+  display: grid;
+  place-items: center;
+}
+
+.blue-bg {
+  width: 23.75em;
+  height: 23.75em;
+  border-radius: 50%;
+  background: var(--primary-color);
+}
+
+.blue-bg img {
+  position: relative;
+  /* bottom: 30px;
+    right: 20px; */
+  width: 100%;
+  border-radius: 50%;
+}
+
+/*ANIMATION*/
+
+.animated_text h1 {
+  -webkit-text-stroke: 1px #fff;
+  font-family: Arial, Helvetica, sans-serif;
+  color: transparent;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(var(--primary-color), var(--primary-color));
+  -webkit-background-clip: text;
+  background-clip: none;
+  background-position: -500px 0;
+  animation: backcolor 5s linear infinite;
+}
+
+.myimage {
+  object-fit: cover;
+  aspect-ratio: 1/1;
+}
+
+@keyframes backcolor {
+  100% {
+    -webkit-text-stroke: 1px #33383c;
+    background-position: 0 0;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .row {
+    max-width: 800px;
+  }
+
+  .blue-bg-outer {
+    width: 22em;
+    height: 22em;
+    margin: auto;
+  }
+
+  .Information {
+    font-size: 1rem;
+  }
+
+  .white-bg {
+    width: 19.875em;
+    height: 19.875em;
+  }
+
+  .blue-bg {
+    width: 18.75em;
+    height: 18.75em;
+  }
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .text {
+    order: 1;
+  }
+}
