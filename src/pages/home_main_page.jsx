@@ -1,47 +1,95 @@
-import Card from "../components/card";
+import Card from "../components/card/projectmediumCard";
 import Home from "../pages/home";
-import "../styles/home.scss";
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import reactImage from "../assets/card_images/react_image.png";
+import flutterImage from "../assets/card_images/flutter_image.png";
+import midgardImage from "../assets/card_images/midgard.png";
+import myLogo from "../assets/logo.png";
+
 
 const home_main_page = () => {
   const cardList = [
     {
       id: 0,
-      img: "https://i.imgur.com/w5HYiQZ.png",
-      title: "Growth",
+      img: flutterImage,
+      title: "Movie Mobile App",
       description:
-        "Our group of specialists will collaborate with you to develop a personalized strategy aimed at guiding you toward success through incremental progress.",
+        "It is a simple mobile application developed using Flutter and Riverpod. This application uses the TMDB API to access information related to movies. ",
     },
     {
       id: 1,
-      img: "https://i.imgur.com/4wouHGC.png",
-      title: "Fitness",
+      img: reactImage,
+      title: "Movie Web App",
       description:
-        "Offering a diverse range of exercises for your selection, you'll have all the resources necessary to attain the peak of your physical fitness.",
+        "It is a simple movie application developed using Axios, Redux, and Sass. This application utilizes the TMDB API to access information related to movies.",
     },
     {
       id: 2,
-      img: "https://i.imgur.com/UdPvj8T.png",
-      title: "Diet",
+      img: midgardImage,
+      title: "Midgard",
       description:
-        "Our team will collaborate with you to craft a tailor-made meal plan designed to assist you in achieving your distinct health objectives.",
+        "It is a web application developed using Flutter and Riverpod. This application offers insurance sales to users in various fields.",
+    },
+    {
+      id: 3,
+      img: myLogo,
+      title: "My Blog",
+      description:
+        "It is a personal blog application developed using Axios, Redux, and Sass. This application encompasses the projects I am working on and articles I write.",
+    },
+    {
+      id: 4,
+      img: myLogo,
+      title: "My Blog",
+      description:
+        "It is a personal blog application developed using Axios, Redux, and Sass. This application encompasses the projects I am working on and articles I write.",
+    },
+    {
+      id: 5,
+      img: myLogo,
+      title: "My Blog",
+      description:
+        "It is a personal blog application developed using Axios, Redux, and Sass. This application encompasses the projects I am working on and articles I write.",
+    },
+    {
+      id: 6,
+      img: myLogo,
+      title: "My Blog",
+      description:
+        "It is a personal blog application developed using Axios, Redux, and Sass. This application encompasses the projects I am working on and articles I write.",
+    },
+    {
+      id: 6,
+      img: myLogo,
+      title: "My Blog",
+      description:
+        "It is a personal blog application developed using Axios, Redux, and Sass. This application encompasses the projects I am working on and articles I write.",
     },
   ];
   return (
-    <Container>
-      <Col xs={6}>
-        <Col>
-          <Home />
-        </Col>
-        <Col style={{ height: "200vh" }}>
-          <a className="article" style={{ padding: "20px 20px" }}>
-            Articles{" "}
-          </a>
-          <div className="card">
+    <Container style={{ textAlign: "-webkit-center" }}>
+      <Col xs={12}>
+        <Home />
+        <Col style={{ minHeight: "100vh" }}>
+          <br></br>
+          <br></br>
+          <a className="project">Projects </a>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <div>
             <Card props={cardList} />
           </div>
+        </Col>
+        <Col >
+          <a className="project">Articles </a>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+        
         </Col>
       </Col>
     </Container>

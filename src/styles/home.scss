@@ -13,6 +13,7 @@
   justify-content: center;
   align-content: center;
   margin-top: 15vh;
+  gap: 15px;
 }
 
 #tsparticles {
@@ -104,10 +105,32 @@
   }
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1300px), screen and (max-height: 500px) {
   .row {
-    max-width: 800px;
+    margin-top: 0;
   }
+  .blue-bg-outer {
+    width: 20em;
+    height: 20em;
+    margin: auto;
+  }
+
+  .Information {
+    font-size: 1rem;
+  }
+
+  .white-bg {
+    width: 18em;
+    height: 18em;
+  }
+
+  .blue-bg {
+    width: 16em;
+    height: 16em;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
 
   .blue-bg-outer {
     width: 22em;
@@ -145,4 +168,13 @@
   .text {
     order: 1;
   }
+}
+
+.project {
+  color: #000;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 26px;
+  margin: 90px;
 }

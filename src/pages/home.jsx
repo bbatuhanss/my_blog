@@ -99,7 +99,7 @@ const home = () => {
     <div
       id="container"
       style={{
-        height: "100vh",
+        height: "85vh",
       }}
     >
       <div

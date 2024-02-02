@@ -1,5 +1,14 @@
+
+@import './about';
+@import './footer';
+@import './header';
+@import './subFooter';
+@import './card';
+@import './home';
 @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
 
+
+html,
 body {
   margin: 0;
   place-items: center;
