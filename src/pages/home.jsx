@@ -1,25 +1,19 @@
 import myImage from "../assets/my_photo.jpeg";
 import "../styles/home.scss";
-import { useEffect, useMemo, useState } from "react";
-import Particles, { initParticlesEngine } from "@tsparticles/react";
-import { loadSlim } from "@tsparticles/slim";
+import { useEffect, useMemo, useState, useCallback } from "react";
+import Particles from "react-tsparticles";
+import { loadSlim } from "tsparticles-slim";
 
 const home = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const [, setInit] = useState(false);
-  // eslint-disable-next-line react-hooks/rules-of-hooks
-  useEffect(() => {
-    initParticlesEngine(async (engine) => {
-      await loadSlim(engine);
-    }).then(() => {
-      setInit(true);
-    });
+  const particlesInit = useCallback(async (engine) => {
+    console.log(engine);
+    await loadSlim(engine);
   }, []);
 
   const particlesLoaded = (container) => {
     console.log(container);
   };
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const options = useMemo(
     () => ({
       background: {
@@ -112,6 +106,7 @@ const home = () => {
           id="tsparticles"
           particlesLoaded={particlesLoaded}
           options={options}
+          init={particlesInit}
         />
       </div>
       <div className="row">
