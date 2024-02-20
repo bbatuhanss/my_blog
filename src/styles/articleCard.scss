@@ -1,0 +1,61 @@
+.card-article {
+  cursor: pointer; 
+  width: 300px;
+  height: 400px;
+  min-width: 300px;
+  border-radius: 16px;
+  --tw-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+    0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  
+  &-image {
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    height: 190px;
+    width: 310px;
+    object-fit: cover;
+  }
+  &-content {
+    padding: 15px;
+    max-height: 220px;
+    height: 100%;
+  }
+  &-title {
+    font-size: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    justify-content: start;
+    display: flex;
+    max-height: 30px;
+    height: 100%;
+  }
+  &-description {
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    justify-content: start;
+    display: flex;
+    max-height: 110px;
+    height: 100%;
+	color: rgb(24, 23, 23);
+  }
+  &-info {
+    justify-content: space-between;
+    display: flex;
+  }
+  &-date {
+    font-size: 15px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+  }
+  &-button {
+    font-size: 15px;
+    color: hsl(24, 82%, 56%);
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+	  cursor: pointer; 
+  }
+}

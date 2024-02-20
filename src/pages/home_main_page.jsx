@@ -1,12 +1,11 @@
 import Card from "../components/card/projectmediumCard";
+import CardArticle from "../components/card/articleCard";
 import Home from "../pages/home";
-import Container from "react-bootstrap/Container";
-import Col from "react-bootstrap/Col";
 import reactImage from "../assets/card_images/react_image.png";
 import flutterImage from "../assets/card_images/flutter_image.png";
+import goRouter from "../assets/card_images/go_router.jpg";
 import midgardImage from "../assets/card_images/midgard.png";
 import myLogo from "../assets/logo.png";
-
 
 const home_main_page = () => {
   const cardList = [
@@ -67,32 +66,50 @@ const home_main_page = () => {
         "It is a personal blog application developed using Axios, Redux, and Sass. This application encompasses the projects I am working on and articles I write.",
     },
   ];
+
+  const cards = [
+    {
+      title: "Introduction to Flutter",
+      description:
+        "Are you ready to step into the exciting world of mobile app development today?",
+      image: flutterImage,
+      date: "19.09.2023",
+      article:"flutter.md"
+    },
+    {
+      title: "Go Router in Flutter",
+      description:
+        "Navigating with Go Router in Flutter: Faster, Easier, Smarter!",
+      image: goRouter,
+      date: "19.02.2024",
+      article:"go_router.md"
+    },
+  ];
   return (
-    <Container style={{ textAlign: "-webkit-center" }}>
-      <Col xs={12}>
-        <Home />
-        <Col style={{ minHeight: "100vh" }}>
-          <br></br>
-          <br></br>
-          <a className="project">Projects </a>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-          <div>
-            <Card props={cardList} />
+    <div style={{ textAlign: "-webkit-center" }}>
+      <Home />
+      <a className="title">Flutter </a>
+      <div className="article">
+        {cards.map((card) => (
+          <div  style={{ padding: "0px 0.75vw" }}>
+            <CardArticle
+              key={card.title}
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              date={card.date}
+              article={card.article}
+            />
           </div>
-        </Col>
-        <Col >
-          <a className="project">Articles </a>
-          <br></br>
-          <br></br>
-          <br></br>
-          <br></br>
-        
-        </Col>
-      </Col>
-    </Container>
+        ))}
+      </div>
+      <div style={{ minHeight: "100vh" }}>
+        <a className="title">Projects </a>
+        <div>
+          <Card props={cardList} />
+        </div>
+      </div>
+    </div>
   );
 };
 
