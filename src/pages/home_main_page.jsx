@@ -6,6 +6,8 @@ import flutterImage from "../assets/card_images/flutter_image.png";
 import goRouter from "../assets/card_images/go_router.jpg";
 import midgardImage from "../assets/card_images/midgard.png";
 import myLogo from "../assets/logo.png";
+import htmlImage from "../assets/card_images/html_image.jpg";
+import cssImage from "../assets/card_images/css_image.jpg";
 
 const home_main_page = () => {
   const cardList = [
@@ -67,7 +69,7 @@ const home_main_page = () => {
     },
   ];
 
-  const cards = [
+  const cardsFlutter = [
     {
       title: "Introduction to Flutter",
       description:
@@ -85,12 +87,63 @@ const home_main_page = () => {
       article:"go_router.md"
     },
   ];
+
+  const cardsHtml = [
+    {
+      title: "The Web's Foundation",
+      description:"HTML plays a fundamental role in the world of web development.",
+      image: htmlImage,
+      date: "1.04.2022",
+      article:"html.md"
+    },
+  ];
+
+  const sass = [
+    {
+      title: "Sass and CSS",
+      description:"Sass and CSS: Exploring the Fundamental Differences to Stay One Step Ahead in the Design World",
+      image: cssImage,
+      date: "6.12.2023",
+      article:"sassCss.md"
+    },
+  ];
+
   return (
     <div style={{ textAlign: "-webkit-center" }}>
       <Home />
       <a className="title">Flutter </a>
       <div className="article">
-        {cards.map((card) => (
+        {cardsFlutter.map((card) => (
+          <div  style={{ padding: "0px 0.75vw" }}>
+            <CardArticle
+              key={card.title}
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              date={card.date}
+              article={card.article}
+            />
+          </div>
+        ))}
+      </div>
+      <a className="title">HTML </a>
+      <div className="article">
+        {cardsHtml.map((card) => (
+          <div  style={{ padding: "0px 0.75vw" }}>
+            <CardArticle
+              key={card.title}
+              title={card.title}
+              description={card.description}
+              image={card.image}
+              date={card.date}
+              article={card.article}
+            />
+          </div>
+        ))}
+      </div>
+      <a className="title">CSS </a>
+      <div className="article">
+        {sass.map((card) => (
           <div  style={{ padding: "0px 0.75vw" }}>
             <CardArticle
               key={card.title}

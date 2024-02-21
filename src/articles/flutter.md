@@ -4,14 +4,20 @@
 
 Hello friends! Are you ready to step into the exciting world of mobile app development today? If your answer is yes, you're in the right place. In this article, we'll start learning the Flutter framework developed by Google and has gained tremendous popularity. Don't worry if you have no experience at all! I'll guide you step by step through this guide and help you learn the basics of Flutter.
 
+
+    
+                                      
 ## What is Flutter?
 
-Flutter is an open-source mobile app development framework developed by Google. It allows you to create visually appealing, fast, and user-friendly applications for both iOS and Android with a single codebase. Flutter uses the Dart programming language and comes with many built-in widgets, making it easy to build application interfaces.
 
+Flutter is an open-source mobile app development framework developed by Google. It allows you to create visually appealing, fast, and user-friendly applications for both iOS and Android with a single codebase. Flutter uses the Dart programming language and comes with many built-in widgets, making it easy to build application interfaces.
+    
 
 ![logo](src/assets/card_images/flutter3.jpg)
 
+
 ## Why Flutter?
+
 
 There are several reasons to choose Flutter:
 
@@ -24,6 +30,7 @@ There are several reasons to choose Flutter:
 Now, let's take a closer look at Flutter and proceed to create your first Flutter application step by step.
 
 ## Installing Flutter
+
 
 To start using Flutter, you need to install the Flutter SDK on your computer. You can follow these steps to install it:
 

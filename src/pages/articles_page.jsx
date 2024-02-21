@@ -16,9 +16,8 @@ const articlePage = () => {
   return (
     <div className="articles-card">
       <div className="articles-card-item">
-      <ReactMarkdown>{markdownContent}</ReactMarkdown>
+        <ReactMarkdown>{markdownContent}</ReactMarkdown>
       </div>
- 
     </div>
   );
 };
