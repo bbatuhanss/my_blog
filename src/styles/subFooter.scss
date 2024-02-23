@@ -50,18 +50,12 @@ footer {
   font-weight: 500;
 }
 
-footer {
-  text-align: center;
-}
-
 
 @media (max-width: 767px) {
   .footer .content {
     display: flex;
     flex-direction: column;
     font-size: 14px;
-  }
-  .footer .content {
     align-items: center;
     text-align-last: center;
   }
@@ -80,6 +74,7 @@ footer {
 
 .links{
   text-align: start;
+  cursor: pointer;
 }
 
 .social-media{

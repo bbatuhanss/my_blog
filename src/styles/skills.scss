@@ -1,0 +1,56 @@
+.skills{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 85vw;
+  margin: 0 auto 0 auto;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-auto-flow: column;
+}   
+figure {
+  margin: 0;
+  padding: 0;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+/*First section*/
+.wide {
+  display: grid;
+  grid-template-columns: 100%;  /* 1420px; */
+  grid-template-rows: auto 1.25em;
+}
+.wide-a {
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+/*Second section*/
+.composed {
+  display: grid;
+  grid-template-columns: 49.295774647% 1.408450704% 49.295774647%;
+
+}
+.composed-a {
+  grid-column: 1 / 2;
+  grid-row: 1 / 4;
+}
+.composed-b {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  max-width: 48%;
+}
+.composed-c {
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  max-width: 48%;
+}

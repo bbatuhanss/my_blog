@@ -7,35 +7,29 @@ const footer = () => {
     {
       id: 1,
       icon: <FiInstagram />,
-      url: "https://www.stoman.me/",
+      url: "https://www.instagram.com/bbatuhansevinc/?hl=tr",
     },
     {
       id: 2,
       icon: <FiGithub />,
-      url: "https://github.com/",
+      url: "https://github.com/bbatuhanss",
     },
     {
       id: 3,
-      icon: <FiTwitter />,
-      url: "https://twitter.com/",
-    },
-    {
-      id: 4,
       icon: <FiLinkedin />,
-      url: "https://www.linkedin.com/in/",
+      url: "https://www.linkedin.com/in/batuhansevinc/",
     },
   ];
 
   return (
     <div>
-    
       <div className="footer">
-      <SubFooter />
+        <SubFooter />
         <ul className="text-container">
           <a
             style={{
-              fontSize: "18px",
-
+              fontSize: "20px",
+              color: "rgb(43 44 52/var(--tw-text-opacity))",
               padding: " 0.2vw",
             }}
           >
@@ -46,6 +40,8 @@ const footer = () => {
             <a
               style={{
                 padding: "0vw 0.5vw",
+                color: "rgb(43 44 52/var(--tw-text-opacity))",
+                fontSize: "20px",
               }}
               href={link.url}
               target="__blank"

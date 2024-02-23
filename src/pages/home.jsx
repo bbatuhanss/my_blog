@@ -94,12 +94,15 @@ const home = () => {
       id="container"
       style={{
         height: "85vh",
+        minHeight:"500px",
       }}
     >
       <div
         id="tsparticles"
         style={{
           background: "linear-gradient(90deg, #33383C 35%, #ffffff 10%)",
+          minHeight:"500px"
+          
         }}
       >
         <Particles

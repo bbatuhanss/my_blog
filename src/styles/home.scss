@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
 .home-page {
   display: flex;
   align-items: center;
@@ -32,7 +34,6 @@
   --primary-color: #33383c;
   --secondary-color: #33383c;
 }
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
 * {
   margin: 0;
@@ -98,6 +99,60 @@
   aspect-ratio: 1/1;
 }
 
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  color: #26425A;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 24px;
+  max-width: 80vw;
+  justify-content: start;
+  display: flex;
+  padding: 0.5% 0px;
+}
+
+.article {
+  display: flex;
+  justify-content: start;
+  max-width: 80vw;
+  margin: 30px 0px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .text {
+    order: 1;
+  }
+  .article {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 85vw;
+  }
+  .title {
+    justify-content: center;
+    max-width: 85vw;
+  }
+  #container{
+    max-height: 600px;
+  }
+  #tsparticles{
+    max-height: 600px;
+  }
+}
+
 @keyframes backcolor {
   100% {
     -webkit-text-stroke: 1px #33383c;
@@ -128,10 +183,18 @@
     width: 16em;
     height: 16em;
   }
+  .title {
+    padding-top: 20px;
+  }
+  #container{
+    max-height: 600px;
+  }
+  #tsparticles{
+    max-height: 600px;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-
   .blue-bg-outer {
     width: 22em;
     height: 22em;
@@ -151,41 +214,18 @@
     width: 18.75em;
     height: 18.75em;
   }
-}
-
-.content {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-}
-
-@media (max-width: 768px) {
-  .content {
-    flex-direction: column;
+  .article {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
   }
-
-  .text {
-    order: 1;
+  .title {
+    justify-content: center;
   }
-}
-
-.title {
-  color: #000;
-  font-family: "Poppins", sans-serif;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 24px;
-  max-width: 1400px;
-  justify-content: start;
-  display: flex;
-  padding: 0.5% 0px;
-
-}
-
-.article{
-  display: flex;
-  justify-content: start;
-  max-width: 1350px;
-  margin: 30px 0px;
+  #container{
+    max-height: 600px;
+  }
+  #tsparticles{
+    max-height: 600px;
+  }
 }

@@ -1,4 +1,3 @@
-import "../styles/about.scss";
 import myImage from "../assets/my_photo.jpeg";
 
 const about = () => {
