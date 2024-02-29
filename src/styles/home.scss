@@ -1,5 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
 
+.home{
+  padding-left: 7%;
+}
+
 .home-page {
   display: flex;
   align-items: center;
@@ -112,7 +116,6 @@
   font-weight: 600;
   text-transform: uppercase;
   font-size: 24px;
-  max-width: 80vw;
   justify-content: start;
   display: flex;
   padding: 0.5% 0px;
@@ -121,10 +124,18 @@
 .article {
   display: flex;
   justify-content: start;
-  max-width: 80vw;
-  margin: 30px 0px;
+  margin: 20px 10px;
   flex-wrap: wrap;
-  gap: 10px;
+  row-gap: 20px;
+}
+
+.skills{
+  background: rgb(38, 66, 90, .7);
+  border-radius: 16px;
+  padding: 20px 100px;
+  margin: 0px 60px;
+  max-height: 34vh;
+  max-width: 86vw;
 }
 
 @media (max-width: 768px) {
@@ -150,6 +161,9 @@
   }
   #tsparticles{
     max-height: 600px;
+  }
+  .home{
+    padding-left: 1%;
   }
 }
 
@@ -192,6 +206,9 @@
   #tsparticles{
     max-height: 600px;
   }
+  .home{
+    padding-left: 5%;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -227,5 +244,8 @@
   }
   #tsparticles{
     max-height: 600px;
+  }
+  .home{
+    padding-left: 5%;
   }
 }

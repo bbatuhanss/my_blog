@@ -76,6 +76,14 @@ const home_main_page = () => {
       date: "12.01.2023",
       article: "flutter_props.md",
     },
+    {
+      title: "Flutter Widget Props",
+      description:
+        "Flutter Widget Props: The Fundamental Way to Manage Your Applications",
+      image: flutterImageTwo,
+      date: "12.01.2023",
+      article: "flutter_props.md",
+    },
   ];
 
   const cardsHtml = [
@@ -104,56 +112,60 @@ const home_main_page = () => {
     <div style={{ textAlign: "-webkit-center" }}>
       <Home />
       <br></br>
-      <Skills/>
+      <div className="skills">
+        <Skills />
+      </div>
       <br></br>
-      <a className="title">Flutter </a>
-      <div className="article">
-        {cardsFlutter.map((card) => (
-          <div style={{ padding: "0px 0.75vw" }}>
-            <CardArticle
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              image={card.image}
-              date={card.date}
-              article={card.article}
-            />
-          </div>
-        ))}
-      </div>
-      <a className="title">HTML </a>
-      <div className="article">
-        {cardsHtml.map((card) => (
-          <div style={{ padding: "0px 0.75vw" }}>
-            <CardArticle
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              image={card.image}
-              date={card.date}
-              article={card.article}
-            />
-          </div>
-        ))}
-      </div>
-      <a className="title">CSS </a>
-      <div className="article">
-        {sass.map((card) => (
-          <div style={{ padding: "0px 0.75vw" }}>
-            <CardArticle
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              image={card.image}
-              date={card.date}
-              article={card.article}
-            />
-          </div>
-        ))}
-      </div>
-      <a className="title">Projects </a>
-      <div className="article" style={{ padding: "0px 0.75vw" }}>
-        <Card props={cardList} />
+      <div className="home">
+        <a className="title">Flutter </a>
+        <div className="article">
+          {cardsFlutter.map((card) => (
+            <div style={{ padding: "0px 0.75vw" }}>
+              <CardArticle
+                key={card.title}
+                title={card.title}
+                description={card.description}
+                image={card.image}
+                date={card.date}
+                article={card.article}
+              />
+            </div>
+          ))}
+        </div>
+        <a className="title">HTML </a>
+        <div className="article">
+          {cardsHtml.map((card) => (
+            <div style={{ padding: "0px 0.75vw" }}>
+              <CardArticle
+                key={card.title}
+                title={card.title}
+                description={card.description}
+                image={card.image}
+                date={card.date}
+                article={card.article}
+              />
+            </div>
+          ))}
+        </div>
+        <a className="title">CSS </a>
+        <div className="article">
+          {sass.map((card) => (
+            <div style={{ padding: "0px 0.75vw" }}>
+              <CardArticle
+                key={card.title}
+                title={card.title}
+                description={card.description}
+                image={card.image}
+                date={card.date}
+                article={card.article}
+              />
+            </div>
+          ))}
+        </div>
+        <a className="title">Projects </a>
+        <div className="article" style={{ padding: "0px 0.75vw" }}>
+          <Card props={cardList} />
+        </div>
       </div>
       <br></br>
       <br></br>
