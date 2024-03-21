@@ -7,8 +7,7 @@ const articlePage = () => {
   const { state } = useLocation();
 
   useEffect(() => {
-    console.log(state.article);
-    fetch(`src/articles/${state.article}`)
+    fetch(`https://github.com/bbatuhanss/my_blog/blob/main/src/articles/${state.article}`)
       .then((response) => response.text())
       .then((text) => setMarkdownContent(text))
       .catch((error) => console.error("Error fetching Markdown file:", error));
