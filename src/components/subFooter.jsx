@@ -86,6 +86,9 @@ function subFooter() {
             <a onClick={() => handleButtonClick("about")}>About</a>
           </p>
           <p>
+            <a onClick={() => handleButtonClick("publications")}>Articles</a>
+          </p>
+          <p>
             <a onClick={() => handleButtonClick("project")}>Project</a>
           </p>
         </div>

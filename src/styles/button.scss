@@ -1,0 +1,33 @@
+.button {
+  width: 150px;
+  height: 50px;
+  border-radius: 16px;
+  border-color: #33383c;
+  background-color: #33383c;
+  color: white;
+  transition-duration: 0.4s;
+  margin-left: 15%;
+  font-size: 16px;
+}
+.button:hover {
+  background-color: #33383c;
+  color: white;
+  border: 2px solid #33383c;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .button {
+    width: 140px;
+    height: 40px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 767px) {
+  .button {
+    width: 85px;
+    height: 40px;
+    font-size: 8px;
+    margin-left: 1%;
+  }
+}

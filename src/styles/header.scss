@@ -9,7 +9,7 @@
   justify-content: space-around;
   align-items: center;
   cursor: pointer;
-  height: 7vh;
+  height: 8vh;
   min-height: 50px;
   position: sticky;
   top: 0;
@@ -63,4 +63,26 @@
 .list {
 
   justify-content: flex-end;
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .nav-list li a {
+    font-size: 14px;
+  }
+  .logo img {
+    width: 3vw;
+    height: 3vh;
+  }
+
+}
+
+
+@media (max-width: 767px) {
+  .nav-list li a {
+    font-size: 12px;
+  }
+  .logo img {
+    width: 3vw;
+    height: 3vh;
+  }
 }

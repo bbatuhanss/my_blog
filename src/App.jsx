@@ -5,6 +5,7 @@ import Project from "./pages/project";
 import Header from "./components/header";
 import Footer from "./components/footer";
 import Articles from "./pages/articles_page";
+import Publications from "./pages/publications";
 //rafc creat func jsx
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Project />} />
           <Route path="/articles" element={<Articles/>} />
+          <Route path="/publications" element={<Publications/>} />
         </Routes>
         <Footer />
       </Router>
