@@ -3,7 +3,7 @@ import "../../styles/card.scss";
 const card = ({ props }) => {
   return (
     <>
-      <div style={{ textAlign: "-webkit-center"}}>
+      <div style={{ textAlign: "-webkit-center" }}>
         <div className="card-feature">
           {props.map((card, i) => (
             // eslint-disable-next-line react/jsx-key
@@ -17,7 +17,7 @@ const card = ({ props }) => {
               <div className="card-content">
                 <h2 className="card-title">{card.title}</h2>
                 <p className="card-body">{card.description}</p>
-                <a href="#" className="button">
+                <a href={card.link} target="__blank" className="button">
                   Detail More
                 </a>
               </div>

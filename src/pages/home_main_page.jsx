@@ -1,49 +1,14 @@
-import Card from "../components/card/projectmediumCard";
 import CardArticle from "../components/card/articleCard";
 import Home from "../pages/home";
 import Skills from "../pages/skills";
-import reactImage from "../assets/card_images/react_image.png";
 import flutterImage from "../assets/card_images/flutter_image.png";
 import goRouter from "../assets/card_images/go_router.jpg";
-import midgardImage from "../assets/card_images/midgard.png";
-import myLogo from "../assets/logo.png";
 import htmlImage from "../assets/card_images/html_image.jpg";
 import cssImage from "../assets/card_images/css_image.jpg";
 import flutterMistakeImage from "../assets/card_images/flutter_mistake.png";
 import flutterImageTwo from "../assets/card_images/flutter2.png";
 
 const home_main_page = () => {
-  const cardList = [
-    {
-      id: 0,
-      img: flutterImage,
-      title: "Movie Mobile App",
-      description:
-        "It is a simple mobile application developed using Flutter and Riverpod. This application uses the TMDB API to access information related to movies. ",
-    },
-    {
-      id: 1,
-      img: reactImage,
-      title: "Movie Web App",
-      description:
-        "It is a simple movie application developed using Axios, Redux, and Sass. This application utilizes the TMDB API to access information related to movies.",
-    },
-    {
-      id: 2,
-      img: midgardImage,
-      title: "Midgard",
-      description:
-        "It is a web application developed using Flutter and Riverpod. This application offers insurance sales to users in various fields.",
-    },
-    {
-      id: 3,
-      img: myLogo,
-      title: "My Blog",
-      description:
-        "It is a personal blog application developed using Axios, Redux, and Sass. This application encompasses the projects I am working on and articles I write.",
-    },
-  ];
-
   const cardsFlutter = [
     {
       title: "Introduction to Flutter",
@@ -112,9 +77,6 @@ const home_main_page = () => {
     <div style={{ textAlign: "-webkit-center" }}>
       <Home />
       <br></br>
-      <div className="skills">
-        <Skills />
-      </div>
       <br></br>
       <div className="home">
         <a className="title">Flutter </a>
@@ -161,10 +123,6 @@ const home_main_page = () => {
               />
             </div>
           ))}
-        </div>
-        <a className="title">Projects </a>
-        <div className="article" style={{ padding: "0px 0.75vw" }}>
-          <Card props={cardList} />
         </div>
       </div>
       <br></br>
