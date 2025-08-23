@@ -1,4 +1,6 @@
-import CardArticle from "../components/card/articleCard";
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import ArticleCard from "../components/card/articleCard";
 import flutterImage from "../assets/card_images/flutter_image.png";
 import goRouter from "../assets/card_images/go_router.jpg";
 import htmlImage from "../assets/card_images/html_image.jpg";
@@ -7,6 +9,8 @@ import flutterMistakeImage from "../assets/card_images/flutter_mistake.png";
 import flutterImageTwo from "../assets/card_images/flutter2.png";
 
 const publications = () => {
+  const navigate = useNavigate();
+
   const cardsFlutter = [
     {
       title: "Introduction to Flutter",
@@ -18,8 +22,7 @@ const publications = () => {
     },
     {
       title: "Go Router in Flutter",
-      description:
-        "Navigating with Go Router in Flutter: Faster, Easier, Smarter!",
+      description: "Navigating with Go Router in Flutter: Faster, Easier, Smarter!",
       image: goRouter,
       date: "19.01.2024",
       article: "go_router.md",
@@ -34,7 +37,7 @@ const publications = () => {
     {
       title: "Flutter Widget Props",
       description:
-        "Flutter Widget Props: The Fundamental Way to Manage Your Applications",
+        "Flutter Widget Props: The fundamental way to manage your applications.",
       image: flutterImageTwo,
       date: "12.01.2023",
       article: "flutter_props.md",
@@ -44,72 +47,107 @@ const publications = () => {
   const cardsHtml = [
     {
       title: "The Web's Foundation",
-      description:
-        "HTML plays a fundamental role in the world of web development.",
+      description: "HTML plays a fundamental role in the world of web development.",
       image: htmlImage,
-      date: "1.04.2022",
+      date: "01.04.2022",
       article: "html.md",
     },
   ];
 
-  const sass = [
+  const cardsCss = [
     {
       title: "Sass and CSS",
       description:
-        "Sass and CSS: Exploring the Fundamental Differences to Stay One Step Ahead in the Design World",
+        "Sass and CSS: Exploring the differences to stay ahead in the design world.",
       image: cssImage,
-      date: "6.12.2023",
+      date: "06.12.2023",
       article: "sassCss.md",
     },
   ];
 
+  // En günceli featured yap (tüm listeleri birleştirip tarihe göre)
+  const all = [...cardsFlutter, ...cardsHtml, ...cardsCss];
+  const featured =
+    [...all].sort((a, b) => {
+      const pa = a.date.split(".").reverse().join("-");
+      const pb = b.date.split(".").reverse().join("-");
+      return new Date(pb) - new Date(pa);
+    })[0] || all[0];
+
+  const openFeatured = () =>
+    navigate("/articles", {
+      state: {
+        article: featured.article,
+        title: featured.title,
+        date: featured.date,
+        image: featured.image,
+      },
+    });
+
+  const sections = [
+    { id: "flutter", title: "Flutter", items: cardsFlutter },
+    { id: "html", title: "HTML", items: cardsHtml },
+    { id: "css", title: "CSS / Sass", items: cardsCss },
+  ];
+
   return (
-    <div className="home">
-      <a className="title">Flutter </a>
-      <div className="article">
-        {cardsFlutter.map((card) => (
-          <div style={{ padding: "0px 0.75vw" }}>
-            <CardArticle
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              image={card.image}
-              date={card.date}
-              article={card.article}
-            />
+    <div className="pub-v2">
+      <header className="pub-hero">
+        <div className="container">
+          <div className="hero-top">
+            <h1>Publications</h1>
+            <p className="lead">
+              Frontend dünyasından notlar: Flutter, HTML ve CSS üzerine yazılar.
+            </p>
+            <nav className="chips" aria-label="Kategoriler">
+              {sections.map((s) => (
+                <a key={s.id} className="chip" href={`#${s.id}`}>
+                  {s.title}
+                </a>
+              ))}
+            </nav>
           </div>
-        ))}
-      </div>
-      <a className="title">HTML </a>
-      <div className="article">
-        {cardsHtml.map((card) => (
-          <div style={{ padding: "0px 0.75vw" }}>
-            <CardArticle
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              image={card.image}
-              date={card.date}
-              article={card.article}
-            />
+
+          {/* FEATURED */}
+          {featured && (
+            <button
+              type="button"
+              className="feature-card"
+              onClick={openFeatured}
+              style={{ backgroundImage: `url(${featured.image})` }}
+              aria-label={`Read: ${featured.title}`}
+            >
+              <span className="overlay" />
+              <span className="content">
+                <span className="badge">Featured</span>
+                <h2>{featured.title}</h2>
+                <p className="desc">{featured.description}</p>
+                <span className="meta">
+                  <time>{featured.date}</time>
+                  <span className="cta">Read</span>
+                </span>
+              </span>
+            </button>
+          )}
+        </div>
+      </header>
+
+      {sections.map((s) => (
+        <section key={s.id} id={s.id} className="pub-section">
+          <div className="container">
+            <div className="section-head">
+              <h2>{s.title}</h2>
+              <span className="count">{s.items.length}</span>
+            </div>
+
+            <div className="pub-grid">
+              {s.items.map((card) => (
+                <ArticleCard key={card.title} {...card} />
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
-      <a className="title">CSS </a>
-      <div className="article">
-        {sass.map((card) => (
-          <div style={{ padding: "0px 0.75vw" }}>
-            <CardArticle
-              key={card.title}
-              title={card.title}
-              description={card.description}
-              image={card.image}
-              date={card.date}
-              article={card.article}
-            />
-          </div>
-        ))}
-      </div>
+        </section>
+      ))}
     </div>
   );
 };

@@ -1,0 +1,229 @@
+:root {
+  --brand: #33383c;
+  --ink: #0f172a;
+  --muted: #475569;
+  --border: #e5e7f0;
+  --bg: #fff;
+  --bg-alt: #f6f8fb;
+  --ring: rgba(51, 56, 60, 0.18);
+  --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  --shadow-lg: 0 18px 40px rgba(15, 23, 42, 0.12);
+}
+
+.pub-v2 {
+  font-family: "Poppins", system-ui, -apple-system, Segoe UI, Roboto, Arial,
+    sans-serif;
+  color: var(--ink);
+}
+
+/* HERO */
+.pub-hero {
+  background: radial-gradient(
+      900px 360px at -10% 0,
+      #eef2f7 0%,
+      transparent 60%
+    ),
+    radial-gradient(900px 360px at 110% 0, #eef2f7 0%, transparent 60%),
+    linear-gradient(180deg, #ffffff 0%, #f7f9fc 100%);
+  border-bottom: 1px solid var(--border);
+}
+
+.pub-hero .container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(24px, 5vw, 48px) clamp(16px, 5vw, 24px);
+}
+
+.hero-top h1 {
+  margin: 0 0 6px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: clamp(26px, 4vw, 36px);
+}
+.hero-top .lead {
+  margin: 0 0 14px;
+  color: var(--muted);
+  font-size: clamp(14px, 2.3vw, 18px);
+}
+
+.chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  .chip {
+    text-decoration: none;
+    color: var(--ink);
+    border: 1px solid var(--border);
+    background: #fff;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-size: 14px;
+    transition: transform 0.15s ease, box-shadow 0.2s ease,
+      border-color 0.2s ease;
+    &:hover {
+      transform: translateY(-1px);
+      border-color: #cbd5e1;
+      box-shadow: 0 6px 18px rgba(2, 8, 23, 0.06);
+    }
+  }
+}
+
+/* FEATURED */
+.feature-card {
+  margin-top: 18px;
+  position: relative;
+  width: 100%;
+  min-height: 320px;
+  display: block;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow);
+  text-align: left;
+  cursor: pointer;
+  transition: transform 0.25s ease, box-shadow 0.25s ease,
+    border-color 0.25s ease;
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: #d5dbe8;
+}
+
+.feature-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 23, 42, 0.1) 0%,
+    rgba(15, 23, 42, 0.65) 70%
+  );
+}
+.feature-card .content {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: 20px clamp(16px, 4vw, 24px);
+  color: #fff;
+  display: grid;
+  gap: 8px;
+}
+.feature-card .badge {
+  width: max-content;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: saturate(140%) blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+.feature-card h2 {
+  margin: 2px 0 0;
+  font-size: clamp(20px, 3.2vw, 28px);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.feature-card .desc {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.95;
+}
+.feature-card .meta {
+  margin-top: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.feature-card .meta time {
+  font-size: 12px;
+  opacity: 0.9;
+}
+.feature-card .cta {
+  background: linear-gradient(90deg, var(--brand), #1f2937);
+  padding: 8px 14px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 13px;
+}
+
+/* SECTIONS */
+.pub-section {
+  background: var(--bg);
+}
+.pub-section:nth-of-type(even) {
+  background: var(--bg-alt);
+}
+
+.pub-section .container {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding: clamp(26px, 5vw, 44px) clamp(16px, 5vw, 24px);
+}
+
+/* Başlık ve rozet */
+.section-head {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.section-head h2 {
+  margin: 0;
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 700;
+  position: relative;
+}
+.section-head h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  height: 3px;
+  width: 38px;
+  background: linear-gradient(90deg, var(--brand), #1f2937);
+  border-radius: 999px;
+}
+
+/* 🔥 daha belirgin sayı rozeti */
+.section-head .count {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #fff;
+  color: var(--ink);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(2, 8, 23, 0.05);
+}
+.section-head .count::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.18);
+}
+
+.pub-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(14px, 2.8vw, 22px);
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.pub-grid > * {
+  flex: 0 1 320px;
+}
+
+@media (max-width: 520px) {
+  .pub-grid > * {
+    flex-basis: 100%;
+  }
+}

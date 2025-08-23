@@ -1,54 +1,104 @@
-import "../styles/header.scss";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
 import LogoIcon from "../assets/logo.png";
-import React, { useState, useEffect } from "react";
-import Button  from  "../components/button";
+import Button from "../components/button";
 
-//rafce use to function class
-const header = () => {
-  // eslint-disable-next-line react-hooks/rules-of-hooks
+const Header = () => {
   const navigate = useNavigate();
-  const [showButton, setShowButton] = useState(true);
+  const [open, setOpen] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth < 768) {
-        setShowButton(false);
-      } else {
-        setShowButton(true);
-      }
-    };
+  const handleNav = (to) => {
+    navigate(to);
+    setOpen(false); // mobilde menüyü kapat
+  };
 
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  
   return (
-    <div className="navbar background " style={{ zIndex: 1 }}>
-      
-      <div className="logo">
-        {showButton  && <img src={LogoIcon} />}
+    <header className="site-header">
+      <div className="container">
+        <div className="brand">
+          <button
+            className="skip-link"
+            onClick={() => document.getElementById("main-content")?.focus()}
+          >
+            İçeriğe geç
+          </button>
+
+          <img
+            src={LogoIcon}
+            alt="Logo"
+            className="brand__logo"
+            width={140}
+            height={40}
+            loading="eager"
+          />
+        </div>
+
+        <nav
+          id="primary-navigation"
+          className={`nav ${open ? "nav--open" : ""}`} // 🔥 düzeltildi
+          aria-label="Birincil"
+        >
+          <ul className="nav__list">
+            <li className="nav__item">
+              <NavLink
+                to="/home"
+                className={({ isActive }) =>
+                  "nav__link" + (isActive ? " is-active" : "")
+                }
+                onClick={() => handleNav("home")}
+              >
+                Home
+              </NavLink>
+            </li>
+            <li className="nav__item">
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  "nav__link" + (isActive ? " is-active" : "")
+                }
+                onClick={() => handleNav("about")}
+              >
+                About
+              </NavLink>
+            </li>
+            <li className="nav__item">
+              <NavLink
+                to="/publications"
+                className={({ isActive }) =>
+                  "nav__link" + (isActive ? " is-active" : "")
+                }
+                onClick={() => handleNav("publications")}
+              >
+                Articles
+              </NavLink>
+            </li>
+            <li className="nav__item">
+              <NavLink
+                to="/project"
+                className={({ isActive }) =>
+                  "nav__link" + (isActive ? " is-active" : "")
+                }
+                onClick={() => handleNav("project")}
+              >
+                Project
+              </NavLink>
+            </li>
+            <li className="nav__cta">
+              <Button />
+            </li>
+          </ul>
+        </nav>
+        <button
+          className={`nav-toggle ${open ? "open" : ""}`}
+          onClick={() => setOpen((s) => !s)}
+        >
+          <span className="nav-toggle__bar" />
+          <span className="nav-toggle__bar" />
+          <span className="nav-toggle__bar" />
+        </button>
       </div>
-      <nav className="list">
-        <ul className="nav-list">
-          <li>
-            <a onClick={() => navigate("home")}>Home</a>
-          </li>
-          <li>
-            <a onClick={() => navigate("about")}>About</a>
-          </li>
-          <li>
-            <a onClick={() => navigate("publications")}>Articles</a>
-          </li>
-          <li>
-            <a onClick={() => navigate("project")}>Project</a>
-          </li>
-          <Button/>
-        </ul>
-      </nav>
-    </div>
+    </header>
   );
 };
 
-export default header;
+export default Header;

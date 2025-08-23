@@ -1,16 +1,15 @@
-
-@import './about';
-@import './footer';
-@import './header';
-@import './subFooter';
-@import './card';
-@import './home';
-@import './articleCard';
-@import './article';
-@import './skills';
-@import './button';
-@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext');
-
+@use "./about";
+@use "./footer";
+@use "./header";
+@use "./subFooter";
+@use "./card";
+@use "./home";
+@use "./articleCard";
+@use "./article";
+@use "./skills";
+@use "./button";
+@use "./publications";
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
 
 html,
 body {
@@ -19,5 +18,5 @@ body {
   min-width: 320px;
   min-height: 100vh;
   padding: 0;
+  overflow-x: clip;
 }
- 

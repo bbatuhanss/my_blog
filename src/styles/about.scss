@@ -1,40 +1,102 @@
 .about {
-  max-width: 1250px;
-  width: 100%;
-  text-align: center;
-  min-width: 400px;
-  padding: 50px;
-  &-round {
-    width: 35%;
-    border-radius: 14%;
-    text-align: center;
-    font-size: 30px;
-    float: left;
-    font-weight: bold;
-    object-fit: cover;
-    aspect-ratio: 1/1;
-    overflow: hidden;
-    margin-right: 15px;
-    min-height: 250px;
-    min-width: 250px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 40px;
+  font-family: "Poppins", sans-serif;
+
+  &-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+
+    img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+      border: 4px solid #33383c;
+      transition: transform 0.4s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &-text {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    h2 {
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 700;
+      color: #33383c;
+      margin-bottom: 10px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -6px;
+        width: 60px;
+        height: 4px;
+        background: #33383c;
+        border-radius: 2px;
+      }
+    }
+
+    p {
+      font-size: clamp(15px, 1.2vw, 18px);
+      line-height: 1.8;
+      font-weight: 300;
+      text-align: justify;
+      color: #444;
+    }
+
+    .highlight {
+      color: #26425a;
+      font-weight: 600;
+    }
   }
 }
 
-article {
-  padding-top: 75px;
-  display: inline-block;
-}
+@media (max-width: 768px) {
+  .about {
+    flex-direction: column;
+    align-items: center; 
 
-p {
-  text-align: justify;
-  font-size: 18px;
-  padding-top: 10px;
-  font-family: "Poppins", sans-serif;
-  font-weight: 300;
-}
+    &-image {
+      flex: none;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
 
-img,
-video {
-  max-width: 100%;
-  height: auto;
+      img {
+        width: 220px; 
+        height: 220px;
+      }
+    }
+
+    &-text {
+      text-align: center;
+
+      h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+
+      p {
+        text-align: left;
+      }
+    }
+  }
 }

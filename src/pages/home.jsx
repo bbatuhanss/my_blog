@@ -1,140 +1,239 @@
+import React, { useMemo } from "react";
 import myImage from "../assets/my_photo.jpeg";
-import "../styles/home.scss";
-import { useEffect, useMemo, useState, useCallback } from "react";
-import Particles from "react-tsparticles";
-import { loadSlim } from "tsparticles-slim";
+import ArticleCard from "../components/card/articleCard";
+import ProjectCard from "../components/card/projectmediumCard";
+import flutterImage from "../assets/card_images/flutter_image.png";
+import goRouter from "../assets/card_images/go_router.jpg";
+import cssImage from "../assets/card_images/css_image.jpg";
+import htmlImage from "../assets/card_images/html_image.jpg";
+import midgardImage from "../assets/card_images/midgard.png";
+import myLogo from "../assets/logo.png";
+import flutterImageTwo from "../assets/card_images/flutter2.png";
+import sanethica from "../assets/card_images/sanethica.png";
 
-const home = () => {
-  const [, setInit] = useState(false);
-  const particlesInit = useCallback(async (engine) => {
-    console.log(engine);
-    await loadSlim(engine);
-  }, []);
-
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-  const options = useMemo(
-    () => ({
-      background: {
-        color: {
-          value: "white",
-        },
+const Home = () => {
+  const articles = useMemo(
+    () => [
+      {
+        title: "Introduction to Flutter",
+        description:
+          "Are you ready to step into the exciting world of mobile app development today?",
+        image: flutterImage,
+        date: "19.09.2023",
+        article: "flutter.md",
       },
-
-      style: {
-        position: "absolute",
+      {
+        title: "Go Router in Flutter",
+        description:
+          "Navigating with Go Router in Flutter: Faster, Easier, Smarter!",
+        image: goRouter,
+        date: "19.01.2024",
+        article: "go_router.md",
       },
-      fpsLimit: 120,
-      interactivity: {
-        events: {
-          onClick: {
-            enable: true,
-            mode: "push",
-          },
-          onHover: {
-            enable: true,
-            mode: "repulse",
-          },
-        },
-        modes: {
-          push: {
-            quantity: 9,
-          },
-          repulse: {
-            distance: 150,
-            duration: 0.4,
-          },
-        },
+      {
+        title: "The Web's Foundation",
+        description:
+          "HTML plays a fundamental role in the world of web development.",
+        image: htmlImage,
+        date: "01.04.2022",
+        article: "html.md",
       },
-      particles: {
-        color: {
-          value: "#d3d3d3",
-        },
-        links: {
-          color: "#d3d3d3",
-          distance: 140,
-          enable: true,
-          opacity: 0.5,
-          width: 1,
-        },
-        move: {
-          direction: "none",
-          enable: true,
-          outModes: {
-            default: "bounce",
-          },
-          random: false,
-          speed: 2,
-          straight: false,
-        },
-        number: {
-          density: {
-            enable: true,
-          },
-          value: 200,
-        },
-        opacity: {
-          value: 0.5,
-        },
-        shape: {
-          type: "circle",
-        },
-        size: {
-          value: { min: 1, max: 5 },
-        },
+      {
+        title: "Sass and CSS",
+        description:
+          "Sass and CSS: Exploring the differences to stay ahead in the design world.",
+        image: cssImage,
+        date: "06.12.2023",
+        article: "sassCss.md",
       },
-      detectRetina: true,
-    }),
+    ],
+    []
+  );
+  const projects = useMemo(
+    () => [
+      {
+        id: 1,
+        img: midgardImage,
+        title: "Midgard",
+        description:
+          "Insurance sales platform crafted with Flutter & Riverpod. Multi-branch coverage.",
+        site: "",
+        repo: "",
+        tech: ["Flutter", "Riverpod", "Web"],
+        fit: "cover",
+        pos: "center",
+      },
+      {
+        id: 2,
+        img: myLogo,
+        title: "My Blog",
+        description:
+          "Personal blog (Vite + React + SCSS). A home for my projects and articles.",
+        site: "",
+        repo: "https://github.com/bbatuhanss/my_blog",
+        tech: ["React", "Vite", "SCSS"],
+        fit: "contain",
+        pos: "center",
+      },
+      {
+        id: 3,
+        img: flutterImageTwo,
+        title: "E-learning",
+        description:
+          "Design-first e-learning UI in Flutter. Clean, focused and responsive.",
+        site: "",
+        repo: "https://github.com/bbatuhanss/e_learning",
+        tech: ["Flutter", "UI"],
+        fit: "cover",
+        pos: "center",
+      },
+      {
+        id: 4,
+        img: sanethica,
+        title: "Sanethica – Healthy Nutrition & Weight Loss",
+        description:
+          "Built with React. A modern web experience for healthy nutrition and weight loss.",
+        site: "https://www.sanethica.co/",
+        repo: "https://github.com/bbatuhanss/sanethicaApp",
+        tech: ["React"],
+        fit: "contain",
+        pos: "center",
+      },
+    ],
     []
   );
 
   return (
-    <div
-      id="container"
-      style={{
-        height: "85vh",
-        minHeight:"500px",
-      }}
-    >
-      <div
-        id="tsparticles"
-        style={{
-          background: "linear-gradient(90deg, #33383C 35%, #ffffff 10%)",
-          minHeight:"500px"
-          
-        }}
-      >
-        <Particles
-          id="tsparticles"
-          particlesLoaded={particlesLoaded}
-          options={options}
-          init={particlesInit}
-        />
-      </div>
-      <div className="row">
-        <div className="content">
-          <div className="images">
-            <div className="blue-bg-outer">
-              <div className="white-bg">
-                <div className="blue-bg">
-                  <img src={myImage} alt="image" className="myimage" />
-                </div>
-              </div>
+    <main className="home-root">
+      {/* ===== HERO ===== */}
+      <section id="home" className="hero-min" aria-label="Hero">
+        <div className="hero-min__bg" aria-hidden="true">
+          <span className="pattern" />
+          <span className="glow" />
+        
+        </div>
+
+        <div className="hero-min__inner">
+          <div className="hero-min__left">
+            <p className="eyebrow">Software Engineer</p>
+            <h1 className="h-title">Batuhan Sevinç</h1>
+            <p className="h-sub">
+              I craft modern, accessible and responsive interfaces using{" "}
+              <strong>React, Angular & Flutter.</strong>
+            </p>
+
+            <div className="cta">
+              <a href="/articles/cv/cv.pdf" download className="btn primary">
+                📄 Download CV
+              </a>
+              <a href="#projects" className="btn ghost">
+                View Projects
+              </a>
             </div>
+
+            <ul className="stats" aria-label="Quick stats">
+              <li>
+                <strong>5+</strong>
+                <span>Years</span>
+              </li>
+              <li>
+                <strong>7+</strong>
+                <span>Projects</span>
+              </li>
+              <li>
+                <strong>5+</strong>
+                <span>Articles</span>
+              </li>
+            </ul>
           </div>
-          <div className="text">
-            <div className="Information">
-              <h1>Hi, I'm Batuhan</h1>
-              <div className="animated_text">
-                <h1 className="title">Frontend Developer</h1>
+
+          <div className="hero-min__right">
+            <figure className="portrait" role="img" aria-label="Profile">
+              <img src={myImage} alt="Batuhan Sevinç" />
+            </figure>
+          </div>
+        </div>
+
+        <a href="#about" className="scroll-hint" aria-label="Scroll to About">
+          <span className="wheel" />
+        </a>
+      </section>
+
+      {/* ===== ABOUT (kart içinde) ===== */}
+      <section id="about" className="about-min fade-in" aria-label="About">
+        <div className="about-min__inner">
+          <div className="about-card">
+            <div className="about-min__copy">
+              <span className="eyebrow">About</span>
+              <h2 className="about-min__title">See full profile →</h2>
+              <p className="about-min__desc">
+                I’m a frontend developer who treats code as a language and
+                products as experiences. I value clarity, performance and
+                delightful UI details. I keep up with modern stacks and ship
+                clean, accessible and responsive interfaces.
+              </p>
+              <ul className="about-min__skills" aria-label="Tech stack">
+                <li>React</li>
+                <li>TypeScript</li>
+                <li>Redux</li>
+                <li>SCSS</li>
+                <li>Flutter</li>
+                <li>Angular</li>
+              </ul>
+              <div className="about-min__actions">
+                <a
+                  href="/about"
+                  className="btn primary"
+                  aria-label="Go to full profile"
+                >
+                  See Full Profile
+                </a>
+                <a
+                  href="/publications"
+                  className="btn ghost"
+                  aria-label="Go to articles"
+                >
+                  Articles
+                </a>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+
+      {/* ===== ARTICLES ===== */}
+      <section id="articles" className="section">
+        <div className="section-inner">
+          <div className="section-head">
+            <h2>Featured Articles</h2>
+            <a href="/publications" className="link">
+              Browse all →
+            </a>
+          </div>
+          <div className="home-grid">
+            {articles.map((a) => (
+              <div key={a.title} className="home-grid__item">
+                <ArticleCard {...a} />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PROJECTS ===== */}
+      <section id="projects" className="section alt">
+        <div className="section-inner">
+          <div className="section-head">
+            <h2>Featured Projects</h2>
+            <a href="/project" className="link">
+              See all projects →
+            </a>
+          </div>
+          <ProjectCard props={projects} showHead={false} />
+        </div>
+      </section>
+    </main>
   );
 };
 
-export default home;
+export default Home;

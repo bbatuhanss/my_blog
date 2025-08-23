@@ -1,31 +1,40 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+
 const articleCard = ({ title, description, image, date, article }) => {
   const navigate = useNavigate();
-  return (
-    <div className="card-article">
-      <img className="card-article-image" src={image} alt="Kart Resmi" />
-      <div className="card-article-content">
-        <div className="card-article-title">{title}</div>
 
-        <p className="card-article-description">{description}</p>
-        <div className="card-article-info">
-          <p className="card-article-date">{date}</p>
-          <p
-            className="card-article-button"
-            onClick={() =>
-              navigate("/articles", {
-                state: { 
-                  article,
-                },
-              })
-            }
-          >
-            Read More
-          </p>
+  const open = () => {
+    navigate("/articles", {
+      state: { article, title, date, image },
+    });
+  };
+
+  return (
+    <article
+      className="card-article"
+      role="button"
+      tabIndex={0}
+      onClick={open}
+      onKeyDown={(e) => (e.key === "Enter" ? open() : null)}
+      aria-label={`Read: ${title}`}
+    >
+      <figure className="card-article__media">
+        <img src={image} alt={title} loading="lazy" />
+      </figure>
+
+      <div className="card-article__body">
+        <h3 className="card-article__title" title={title}>
+          {title}
+        </h3>
+        <p className="card-article__desc">{description}</p>
+
+        <div className="card-article__meta">
+          <time className="card-article__date">{date}</time>
+          <span className="card-article__cta">Read</span>
         </div>
       </div>
-    </div>
+    </article>
   );
 };
 

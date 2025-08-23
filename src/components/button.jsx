@@ -1,4 +1,5 @@
 import CV from "../articles/cv/cv.pdf";
+
 const button = () => {
   const onButtonClick = () => {
     const pdfUrl = CV;
@@ -9,14 +10,12 @@ const button = () => {
     link.click();
     document.body.removeChild(link);
   };
+
   return (
-    <div>
-      <button className="button" onClick={onButtonClick}>
-        Download CV
-      </button>
-    </div>
+    <button className="button" onClick={onButtonClick}>
+      Download CV
+    </button>
   );
 };
 
 export default button;
-("");

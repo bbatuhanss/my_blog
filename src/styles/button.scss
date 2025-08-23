@@ -1,33 +1,42 @@
 .button {
-  width: 150px;
-  height: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: clamp(100px, 12vw, 160px);
+  height: clamp(38px, 5vh, 50px);
   border-radius: 16px;
-  border-color: #33383c;
-  background-color: #33383c;
-  color: white;
-  transition-duration: 0.4s;
-  margin-left: 15%;
-  font-size: 16px;
-}
-.button:hover {
+
   background-color: #33383c;
   color: white;
   border: 2px solid #33383c;
+  font-size: clamp(12px, 1.6vw, 16px);
+  font-weight: 500;
+
+  transition: all 0.3s ease;
+  cursor: pointer;
 }
 
-@media (min-width: 768px) and (max-width: 1024px) {
+.button:hover {
+  background-color: white;
+  color: #33383c;
+  border: 2px solid #33383c;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
   .button {
-    width: 140px;
+    width: clamp(90px, 20vw, 140px);
     height: 40px;
     font-size: 14px;
   }
 }
 
+/* Telefon */
 @media (max-width: 767px) {
   .button {
-    width: 85px;
-    height: 40px;
-    font-size: 8px;
-    margin-left: 1%;
+    width: clamp(80px, 30vw, 120px);
+    height: 36px;
+    font-size: 12px;
   }
 }
