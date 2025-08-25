@@ -97,7 +97,7 @@ const publications = () => {
           <div className="hero-top">
             <h1>Publications</h1>
             <p className="lead">
-              Frontend dünyasından notlar: Flutter, HTML ve CSS üzerine yazılar.
+              Notes from the frontend world: articles on Flutter, HTML, and CSS.
             </p>
             <nav className="chips" aria-label="Kategoriler">
               {sections.map((s) => (

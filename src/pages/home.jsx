@@ -10,6 +10,8 @@ import midgardImage from "../assets/card_images/midgard.png";
 import myLogo from "../assets/logo.png";
 import flutterImageTwo from "../assets/card_images/flutter2.png";
 import sanethica from "../assets/card_images/sanethica.png";
+import CV from "../articles/cv/Hasan-Batuhan-Sevinc-CV.pdf";
+import { Link } from "react-router-dom";
 
 const Home = () => {
   const articles = useMemo(
@@ -103,6 +105,13 @@ const Home = () => {
     []
   );
 
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = CV;
+    link.download = "Hasan-Batuhan-Sevinc-CV.pdf";
+    link.click();
+  };
+
   return (
     <main className="home-root">
       {/* ===== HERO ===== */}
@@ -110,7 +119,7 @@ const Home = () => {
         <div className="hero-min__bg" aria-hidden="true">
           <span className="pattern" />
           <span className="glow" />
-        
+
         </div>
 
         <div className="hero-min__inner">
@@ -118,14 +127,14 @@ const Home = () => {
             <p className="eyebrow">Software Engineer</p>
             <h1 className="h-title">Batuhan Sevinç</h1>
             <p className="h-sub">
-              I craft modern, accessible and responsive interfaces using{" "}
-              <strong>React, Angular & Flutter.</strong>
+              I am a <strong>Software Engineer</strong> crafting modern, accessible and responsive interfaces using{" "}
+              <strong>React, Angular, Java & Flutter</strong>, while also developing robust backend solutions.
             </p>
 
             <div className="cta">
-              <a href="/articles/cv/cv.pdf" download className="btn primary">
+              <div className="btn primary" onClick={handleDownload}>
                 📄 Download CV
-              </a>
+              </div>
               <a href="#projects" className="btn ghost">
                 View Projects
               </a>
@@ -202,13 +211,14 @@ const Home = () => {
       </section>
 
       {/* ===== ARTICLES ===== */}
+      {/* ===== ARTICLES ===== */}
       <section id="articles" className="section">
         <div className="section-inner">
           <div className="section-head">
             <h2>Featured Articles</h2>
-            <a href="/publications" className="link">
+            <Link to="/publications" className="link">
               Browse all →
-            </a>
+            </Link>
           </div>
           <div className="home-grid">
             {articles.map((a) => (
@@ -225,9 +235,9 @@ const Home = () => {
         <div className="section-inner">
           <div className="section-head">
             <h2>Featured Projects</h2>
-            <a href="/project" className="link">
+            <Link to="/project" className="link">
               See all projects →
-            </a>
+            </Link>
           </div>
           <ProjectCard props={projects} showHead={false} />
         </div>

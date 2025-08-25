@@ -1,4 +1,4 @@
-import CV from "../articles/cv/cv.pdf";
+import CV from "../articles/cv/Hasan-Batuhan-Sevinc-CV.pdf";
 
 const button = () => {
   const onButtonClick = () => {
