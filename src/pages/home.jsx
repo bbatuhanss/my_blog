@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import { useMemo } from "react";
 import myImage from "../assets/my_photo.jpeg";
 import ArticleCard from "../components/card/articleCard";
 import ProjectCard from "../components/card/projectmediumCard";
@@ -10,7 +10,7 @@ import midgardImage from "../assets/card_images/midgard.png";
 import myLogo from "../assets/logo.png";
 import flutterImageTwo from "../assets/card_images/flutter2.png";
 import sanethica from "../assets/card_images/sanethica.png";
-import CV from "../articles/cv/Hasan-Batuhan-Sevinc-CV.pdf";
+import CV from "../articles/cv/Hasan_Batuhan_Sevinç_CV.pdf";
 import { Link } from "react-router-dom";
 
 const Home = () => {
@@ -108,7 +108,7 @@ const Home = () => {
   const handleDownload = () => {
     const link = document.createElement("a");
     link.href = CV;
-    link.download = "Hasan-Batuhan-Sevinc-CV.pdf";
+    link.download = "HasanBatuhanSevincCV.pdf";
     link.click();
   };
 
