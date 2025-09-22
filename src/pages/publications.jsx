@@ -7,6 +7,7 @@ import htmlImage from "../assets/card_images/html_image.jpg";
 import cssImage from "../assets/card_images/css_image.jpg";
 import flutterMistakeImage from "../assets/card_images/flutter_mistake.png";
 import flutterImageTwo from "../assets/card_images/flutter2.png";
+import junit from "../assets/card_images/junit.png";
 
 const publications = () => {
   const navigate = useNavigate();
@@ -22,7 +23,8 @@ const publications = () => {
     },
     {
       title: "Go Router in Flutter",
-      description: "Navigating with Go Router in Flutter: Faster, Easier, Smarter!",
+      description:
+        "Navigating with Go Router in Flutter: Faster, Easier, Smarter!",
       image: goRouter,
       date: "19.01.2024",
       article: "go_router.md",
@@ -47,7 +49,8 @@ const publications = () => {
   const cardsHtml = [
     {
       title: "The Web's Foundation",
-      description: "HTML plays a fundamental role in the world of web development.",
+      description:
+        "HTML plays a fundamental role in the world of web development.",
       image: htmlImage,
       date: "01.04.2022",
       article: "html.md",
@@ -65,8 +68,18 @@ const publications = () => {
     },
   ];
 
-  // En günceli featured yap (tüm listeleri birleştirip tarihe göre)
-  const all = [...cardsFlutter, ...cardsHtml, ...cardsCss];
+  const cardsJunit = [
+    {
+      title: "Mastering Unit Testing with JUnit",
+      description:
+        "My personal journey with JUnit: why it matters, how I use it, and lessons I’ve learned as a developer.",
+      image: junit,
+      date: "22.09.2025",
+      article: "unit.md",
+    },
+  ];
+
+  const all = [...cardsFlutter, ...cardsHtml, ...cardsCss, ...cardsJunit];
   const featured =
     [...all].sort((a, b) => {
       const pa = a.date.split(".").reverse().join("-");
@@ -88,6 +101,7 @@ const publications = () => {
     { id: "flutter", title: "Flutter", items: cardsFlutter },
     { id: "html", title: "HTML", items: cardsHtml },
     { id: "css", title: "CSS / Sass", items: cardsCss },
+    { id: "junit", title: "Junit", items: cardsJunit },
   ];
 
   return (
@@ -97,7 +111,8 @@ const publications = () => {
           <div className="hero-top">
             <h1>Publications</h1>
             <p className="lead">
-              Notes from the frontend world: articles on Flutter, HTML, and CSS.
+              Notes from the frontend world: articles on Flutter, HTML, CSS and
+              Junit.
             </p>
             <nav className="chips" aria-label="Kategoriler">
               {sections.map((s) => (
