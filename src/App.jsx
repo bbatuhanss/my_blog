@@ -6,7 +6,8 @@ import Header from "./components/header";
 import Footer from "./components/footer";
 import Articles from "./pages/articles_page";
 import Publications from "./pages/publications";
-//rafc creat func jsx
+import SkillMain from "./pages/skills";
+
 function App() {
   return (
     <>
@@ -17,8 +18,9 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/project" element={<Project />} />
-          <Route path="/articles" element={<Articles/>} />
-          <Route path="/publications" element={<Publications/>} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/publications" element={<Publications />} />
+          <Route path="/skills" element={<SkillMain />} />
         </Routes>
         <Footer />
       </Router>

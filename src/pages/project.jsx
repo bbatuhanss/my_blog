@@ -10,120 +10,241 @@ import sanethica from "../assets/card_images/sanethica.png";
 const Project = () => {
   const cardList = useMemo(
     () => [
+      // ── PROFESSIONAL ──────────────────────────
       {
         id: 0,
-        img: flutterImage,
-        title: "Movie Mobile App",
+        img: midgardImage,
+        title: "Mapfre Insurance Platform",
         description:
-          "A compact Flutter + Riverpod app powered by TMDB API for browsing movies.",
-        site: "", // no live
-        repo: "https://github.com/bbatuhanss/search_movie",
-        tech: ["Flutter", "Riverpod", "TMDB"],
+          "TSS & ÖSS health insurance sales and post-sales system serving thousands of daily users. Angular frontend integrated with Java & PL/SQL backend.",
+        site: "",
+        repo: "",
+        tech: ["Angular", "Java", "PL/SQL"],
         fit: "cover",
         pos: "center",
+        type: "professional",
+        placeholder: true,
       },
       {
         id: 1,
-        img: reactImage,
-        title: "Movie Web App",
+        img: midgardImage,
+        title: "Corporate Application & Pricing (Mapfre)",
         description:
-          "React + Redux + Sass. TMDB-backed movie discovery experience for the web.",
-        site: "", // no live
-        repo: "https://github.com/bbatuhanss/movieAppWeb",
-        tech: ["React", "Redux", "Sass", "TMDB"],
+          "End-to-end platform for Mapfre's corporate partners — covering applications, pricing protocols and contract management.",
+        site: "",
+        repo: "",
+        tech: ["Angular", "Java", "PL/SQL"],
         fit: "cover",
         pos: "center",
+        type: "professional",
+        placeholder: true,
       },
       {
         id: 2,
+        img: reactImage,
+        title: "KrediJet Loan Platform (TEB)",
+        description:
+          "Modernized TEB's KrediJet loan platform: migrated legacy PL/SQL to Java microservices, built branch-facing credit application screens.",
+        site: "",
+        repo: "",
+        tech: ["Java", "Spring Boot", "React"],
+        fit: "cover",
+        pos: "center",
+        type: "professional",
+        placeholder: true,
+      },
+      {
+        id: 3,
+        img: reactImage,
+        title: "Insurance Aggregator (Garanti Bank)",
+        description:
+          "Led Angular-based development of an insurance aggregator platform delivered to Garanti Bank.",
+        site: "",
+        repo: "",
+        tech: ["Angular"],
+        fit: "cover",
+        pos: "center",
+        type: "professional",
+        placeholder: true,
+      },
+      {
+        id: 4,
+        img: sanethica,
+        title: "Insurance Aggregator (Fiba Emeklilik)",
+        description:
+          "Delivered a mobile-compatible insurance aggregator for Fiba Emeklilik.",
+        site: "",
+        repo: "",
+        tech: ["Angular", "Flutter"],
+        fit: "contain",
+        pos: "center",
+        type: "professional",
+        placeholder: true,
+      },
+      {
+        id: 5,
+        img: sanethica,
+        title: "Ming App (React & Flutter)",
+        description:
+          "Developed both web (React/Next.js) and mobile (Flutter) versions of Ming app, deployed to production.",
+        site: "",
+        repo: "",
+        tech: ["React", "Flutter"],
+        fit: "contain",
+        pos: "center",
+        type: "professional",
+        placeholder: true,
+      },
+      // ── PERSONAL ──────────────────────────────
+      {
+        id: 6,
+        img: flutterImageTwo,
+        title: "E-learning Platform",
+        description:
+          "Cross-platform learning system built with Flutter for both web and mobile users. Design-first, clean and responsive.",
+        site: "",
+        repo: "https://github.com/bbatuhanss/e_learning",
+        tech: ["Flutter", "UI"],
+        fit: "cover",
+        pos: "center",
+        type: "personal",
+      },
+      {
+        id: 7,
         img: midgardImage,
         title: "Midgard",
         description:
           "Insurance sales platform crafted with Flutter & Riverpod. Multi-branch coverage.",
         site: "",
         repo: "",
-        tech: ["Flutter", "Riverpod", "Web"],
+        tech: ["Flutter", "Riverpod"],
         fit: "cover",
         pos: "center",
+        type: "personal",
       },
       {
-        id: 3,
+        id: 8,
         img: myLogo,
         title: "My Blog",
         description:
           "Personal blog (Vite + React + SCSS). A home for my projects and articles.",
-        site: "", // if you deploy later, put the URL here
+        site: "",
         repo: "https://github.com/bbatuhanss/my_blog",
         tech: ["React", "Vite", "SCSS"],
-        fit: "contain", // logo/simge → tamamını göster
+        fit: "contain",
         pos: "center",
+        type: "personal",
       },
       {
-        id: 4,
-        img: flutterImageTwo,
-        title: "E-learning",
+        id: 9,
+        img: flutterImage,
+        title: "Movie Mobile App",
         description:
-          "Design-first e-learning UI in Flutter. Clean, focused and responsive.",
+          "Flutter + Riverpod app powered by TMDB API for browsing movies.",
         site: "",
-        repo: "https://github.com/bbatuhanss/e_learning",
-        tech: ["Flutter", "UI"],
+        repo: "https://github.com/bbatuhanss/search_movie",
+        tech: ["Flutter", "Riverpod", "TMDB"],
         fit: "cover",
         pos: "center",
+        type: "personal",
       },
       {
-        id: 5,
-        img: sanethica,
-        title: "Sanethica – Healthy Nutrition & Weight Loss",
+        id: 10,
+        img: reactImage,
+        title: "Movie Web App",
         description:
-          "Built with React. A modern web experience for healthy nutrition and weight loss.",
+          "React + Redux + Sass. TMDB-backed movie discovery experience for the web.",
+        site: "",
+        repo: "https://github.com/bbatuhanss/movieAppWeb",
+        tech: ["React", "Redux", "Sass", "TMDB"],
+        fit: "cover",
+        pos: "center",
+        type: "personal",
+      },
+      {
+        id: 11,
+        img: sanethica,
+        title: "Sanethica",
+        description:
+          "Modern web experience for healthy nutrition and weight loss, built with React.",
         site: "https://www.sanethica.co/",
         repo: "https://github.com/bbatuhanss/sanethicaApp",
         tech: ["React"],
-        fit: "contain", // ekran görüntüsü/logo → tamamını göster
+        fit: "contain",
         pos: "center",
+        type: "personal",
       },
     ],
-    []
+    [],
   );
 
   const techs = useMemo(
     () => Array.from(new Set(cardList.flatMap((c) => c.tech || []))).sort(),
-    [cardList]
+    [cardList],
   );
 
-  const [active, setActive] = useState("All");
-  const filtered =
-    active === "All"
-      ? cardList
-      : cardList.filter((c) => (c.tech || []).includes(active));
+  const [activeType, setActiveType] = useState("all");
+  const [activeTech, setActiveTech] = useState("All");
+
+  const filtered = cardList.filter((c) => {
+    const typeMatch = activeType === "all" || c.type === activeType;
+    const techMatch =
+      activeTech === "All" || (c.tech || []).includes(activeTech);
+    return typeMatch && techMatch;
+  });
 
   return (
     <>
-      {/* HERO */}
       <header className="proj-hero">
         <div className="proj-container">
-          <span className="eyebrow">Selected Work & Experiments</span>
+          <span className="eyebrow">Professional & Personal Work</span>
           <h1>Projects Showcase</h1>
           <p className="lead">
-            A hand-picked collection of apps, prototypes and open-source work.
-            Built with <strong>React</strong>, <strong>Flutter</strong> and a
-            passion for great UX.
+            From mission-critical banking and insurance platforms to open-source
+            personal projects — built with <strong>Angular</strong>,{" "}
+            <strong>React</strong>, <strong>Java</strong> and{" "}
+            <strong>Flutter</strong>.
           </p>
 
+          {/* Type filter */}
+          <div className="proj-type-tabs">
+            {[
+              { key: "all", label: `All (${cardList.length})` },
+              {
+                key: "professional",
+                label: `Professional (${cardList.filter((c) => c.type === "professional").length})`,
+              },
+              {
+                key: "personal",
+                label: `Personal (${cardList.filter((c) => c.type === "personal").length})`,
+              },
+            ].map((tab) => (
+              <button
+                key={tab.key}
+                type="button"
+                className={`type-tab ${activeType === tab.key ? "is-active" : ""}`}
+                onClick={() => setActiveType(tab.key)}
+              >
+                {tab.label}
+              </button>
+            ))}
+          </div>
+
+          {/* Tech filter */}
           <nav className="proj-chips" aria-label="Filter by technology">
             <button
               type="button"
-              className={`chip ${active === "All" ? "is-active" : ""}`}
-              onClick={() => setActive("All")}
+              className={`chip ${activeTech === "All" ? "is-active" : ""}`}
+              onClick={() => setActiveTech("All")}
             >
-              All
+              All Tech
             </button>
             {techs.map((t) => (
               <button
                 key={t}
                 type="button"
-                className={`chip ${active === t ? "is-active" : ""}`}
-                onClick={() => setActive(t)}
+                className={`chip ${activeTech === t ? "is-active" : ""}`}
+                onClick={() => setActiveTech(t)}
               >
                 {t}
               </button>
@@ -132,12 +253,11 @@ const Project = () => {
 
           <div className="proj-meta">
             Showing <strong>{filtered.length}</strong> of{" "}
-            <strong>{cardList.length}</strong>
+            <strong>{cardList.length}</strong> projects
           </div>
         </div>
       </header>
 
-      {/* GRID */}
       <Card props={filtered} showHead={false} />
     </>
   );

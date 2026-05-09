@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import ArticleCard from "../components/card/articleCard";
 import flutterImage from "../assets/card_images/flutter_image.png";
@@ -9,7 +8,7 @@ import flutterMistakeImage from "../assets/card_images/flutter_mistake.png";
 import flutterImageTwo from "../assets/card_images/flutter2.png";
 import junit from "../assets/card_images/junit.png";
 
-const publications = () => {
+const Publications = () => {
   const navigate = useNavigate();
 
   const cardsFlutter = [
@@ -167,4 +166,4 @@ const publications = () => {
   );
 };
 
-export default publications;
+export default Publications;

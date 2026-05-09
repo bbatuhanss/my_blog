@@ -9,14 +9,45 @@
 @use "./skills";
 @use "./button";
 @use "./publications";
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:regular,bold,italic&subset=latin,latin-ext");
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
 html,
 body {
   margin: 0;
-  place-items: center;
+  padding: 0;
   min-width: 320px;
   min-height: 100vh;
-  padding: 0;
-  overflow-x: clip;
+  overflow-x: hidden;
+  background: #f8f9fc;
+  color: #1a1d2e;
+  font-family: "Inter", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  /* accent */
+  --ac: #f59e0b;
+  --ac2: #f97316;
+
+  /* surfaces — light */
+  --bg0: #f8f9fc; /* page */
+  --bg1: #ffffff; /* cards */
+  --bg2: #f1f3f8; /* subtle bg */
+  --bg3: #e8eaf2; /* inputs */
+
+  /* text */
+  --t1: #1a1d2e; /* headings */
+  --t2: #52556a; /* body */
+  --t3: #9498b0; /* placeholders */
+
+  /* borders */
+  --bd: #e2e5f0;
+  --bd2: #d0d4e8;
 }

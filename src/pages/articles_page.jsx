@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
 import { useLocation, Link } from "react-router-dom";
 import { OrbitProgress } from "react-loading-indicators";
 
-const articlePage = () => {
+const ArticlePage = () => {
   const { state } = useLocation();
   const article = state?.article;
   const title = state?.title || "Article";
@@ -27,7 +27,7 @@ const articlePage = () => {
       setError("");
       try {
         const response = await fetch(
-          `https://raw.githubusercontent.com/bbatuhanss/my_blog/main/src/articles/${article}`
+          `https://raw.githubusercontent.com/bbatuhanss/my_blog/main/src/articles/${article}`,
         );
         if (!response.ok) throw new Error("Failed to fetch markdown content");
         const markdown = await response.text();
@@ -91,4 +91,4 @@ const articlePage = () => {
   );
 };
 
-export default articlePage;
+export default ArticlePage;

@@ -1,61 +1,122 @@
+import { useEffect, useState } from "react";
 import "../styles/subFooter.scss";
 import LogoIcon from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-import React, { useState } from "react";
 
-function subFooter() {
+function SubFooter() {
   const navigate = useNavigate();
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const handleButtonClick = (router) => {
-    navigate(router);
+  useEffect(() => {
+    const handleScroll = () => setScrollPosition(window.pageYOffset);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleNav = (route) => {
+    navigate(route);
     if (scrollPosition > 0) {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   };
 
-  window.addEventListener("scroll", () => {
-    setScrollPosition(window.pageYOffset);
-  });
-
   return (
     <div className="footer">
       <div className="content">
-        <div className="logo">
-          <img src={LogoIcon} alt="Logo" />
+        {/* Logo + tagline */}
+        <div className="footer-brand">
+          <img src={LogoIcon} alt="Batuhan Sevinç" />
+          <p className="footer-tagline">
+            Full-Stack Engineer building web, mobile & backend systems.
+          </p>
+          <a
+            href="mailto:bbatuhansevincc@gmail.com"
+            className="footer-email-btn"
+          >
+            ✉ bbatuhansevincc@gmail.com
+          </a>
         </div>
-        <div className="services">
-          <h4>Services</h4>
-          <p><a href="#">App Development</a></p>
-          <p><a href="#">Web Development</a></p>
-          <p><a href="#">React</a></p>
-          <p><a href="#">Flutter</a></p>
-          <p><a href="#">Angular</a></p>
-          <p><a href="#">JavaScript</a></p>
-          <p><a href="#">HTML</a></p>
-          <p><a href="#">CSS</a></p>
-          <p><a href="#">SASS</a></p>
+
+        {/* Quick Links */}
+        <div className="footer-col">
+          <h4>Navigation</h4>
+          {[
+            { label: "Home", route: "/home" },
+            { label: "About", route: "/about" },
+            { label: "Skills", route: "/skills" },
+            { label: "Projects", route: "/project" },
+            { label: "Articles", route: "/publications" },
+          ].map(({ label, route }) => (
+            <p key={route}>
+              <a onClick={() => handleNav(route)} role="button" tabIndex={0}>
+                {label}
+              </a>
+            </p>
+          ))}
         </div>
-        <div className="social-media">
-          <h4>Social</h4>
-          <p><a href="https://www.linkedin.com/in/batuhansevinc/" target="_blank">LinkedIn</a></p>
-          <p><a href="https://github.com/bbatuhanss" target="_blank">GitHub</a></p>
-          <p><a href="https://www.instagram.com/bbatuhansevinc/?hl=tr" target="_blank">Instagram</a></p>
+
+        {/* Tech stack */}
+        <div className="footer-col">
+          <h4>Tech Stack</h4>
+          {[
+            "Angular",
+            "React",
+            "Flutter",
+            "Java",
+            "Spring Boot",
+            "TypeScript",
+            "PL/SQL",
+            "GitLab CI/CD",
+          ].map((t) => (
+            <p key={t}>
+              <span className="footer-tech">{t}</span>
+            </p>
+          ))}
         </div>
-        <div className="links">
-          <h4>Quick Links</h4>
-          <p><a onClick={() => handleButtonClick("home")}>Home</a></p>
-          <p><a onClick={() => handleButtonClick("about")}>About</a></p>
-          <p><a onClick={() => handleButtonClick("publications")}>Articles</a></p>
-          <p><a onClick={() => handleButtonClick("project")}>Project</a></p>
-        </div>
-        <div className="details">
-          <h4 className="mail">Contact Me</h4>
-          <p><a>bbatuhansevincc@gmail.com</a></p>
+
+        {/* Social */}
+        <div className="footer-col">
+          <h4>Connect</h4>
+          <p>
+            <a
+              href="https://www.linkedin.com/in/batuhansevinc/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              LinkedIn
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://github.com/bbatuhanss"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://www.instagram.com/bbatuhansevinc/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Instagram
+            </a>
+          </p>
+          <p>
+            <a
+              href="https://www.batuhansevinc.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              batuhansevinc.com
+            </a>
+          </p>
         </div>
       </div>
     </div>
   );
 }
 
-export default subFooter;
+export default SubFooter;

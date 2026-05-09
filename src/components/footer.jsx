@@ -1,4 +1,3 @@
-import React from "react";
 import { FiGithub, FiLinkedin, FiInstagram } from "react-icons/fi";
 import SubFooter from "../components/subFooter";
 
@@ -30,7 +29,9 @@ const footer = () => {
       <SubFooter />
 
       <div className="footer-bar">
-        <p className="footer-copy">© {year} Batuhan Sevinç — All Rights Reserved</p>
+        <p className="footer-copy">
+          © {year} Batuhan Sevinç — All Rights Reserved
+        </p>
 
         <ul className="footer-social" aria-label="Sosyal medya">
           {socialLinks.map((link) => (

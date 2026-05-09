@@ -19,7 +19,7 @@ const Home = () => {
       {
         title: "Introduction to Flutter",
         description:
-          "Are you ready to step into the exciting world of mobile app development today?",
+          "Step into cross-platform mobile development with Flutter — from setup to your first production-ready app.",
         image: flutterImage,
         date: "19.09.2023",
         article: "flutter.md",
@@ -27,30 +27,31 @@ const Home = () => {
       {
         title: "Go Router in Flutter",
         description:
-          "Navigating with Go Router in Flutter: Faster, Easier, Smarter!",
+          "A practical guide to navigation in Flutter using Go Router — cleaner routes, better deep-linking.",
         image: goRouter,
         date: "19.01.2024",
         article: "go_router.md",
       },
       {
-        title: "The Web's Foundation",
+        title: "The Foundation of the Web: HTML",
         description:
-          "HTML plays a fundamental role in the world of web development.",
+          "Understanding HTML semantics and structure — why it still matters and how to write it well.",
         image: htmlImage,
         date: "01.04.2022",
         article: "html.md",
       },
       {
-        title: "Sass and CSS",
+        title: "Sass vs CSS — What's the Difference?",
         description:
-          "Sass and CSS: Exploring the differences to stay ahead in the design world.",
+          "A clear breakdown of how Sass extends CSS and when you should actually reach for it.",
         image: cssImage,
         date: "06.12.2023",
         article: "sassCss.md",
       },
     ],
-    []
+    [],
   );
+
   const projects = useMemo(
     () => [
       {
@@ -58,19 +59,19 @@ const Home = () => {
         img: midgardImage,
         title: "Midgard",
         description:
-          "Insurance sales platform crafted with Flutter & Riverpod. Multi-branch coverage.",
+          "Multi-branch insurance sales platform built with Flutter and Riverpod.",
         site: "",
         repo: "",
-        tech: ["Flutter", "Riverpod", "Web"],
+        tech: ["Flutter", "Riverpod"],
         fit: "cover",
         pos: "center",
       },
       {
         id: 2,
         img: myLogo,
-        title: "My Blog",
+        title: "This Blog",
         description:
-          "Personal blog (Vite + React + SCSS). A home for my projects and articles.",
+          "Personal portfolio and blog built with Vite, React, and SCSS.",
         site: "",
         repo: "https://github.com/bbatuhanss/my_blog",
         tech: ["React", "Vite", "SCSS"],
@@ -80,21 +81,21 @@ const Home = () => {
       {
         id: 3,
         img: flutterImageTwo,
-        title: "E-learning",
+        title: "E-Learning App",
         description:
-          "Design-first e-learning UI in Flutter. Clean, focused and responsive.",
+          "Design-first cross-platform e-learning UI built with Flutter.",
         site: "",
         repo: "https://github.com/bbatuhanss/e_learning",
-        tech: ["Flutter", "UI"],
+        tech: ["Flutter", "UI/UX"],
         fit: "cover",
         pos: "center",
       },
       {
         id: 4,
         img: sanethica,
-        title: "Sanethica – Healthy Nutrition & Weight Loss",
+        title: "Sanethica",
         description:
-          "Built with React. A modern web experience for healthy nutrition and weight loss.",
+          "Healthy nutrition and weight loss web app built with React.",
         site: "https://www.sanethica.co/",
         repo: "https://github.com/bbatuhanss/sanethicaApp",
         tech: ["React"],
@@ -102,7 +103,7 @@ const Home = () => {
         pos: "center",
       },
     ],
-    []
+    [],
   );
 
   const handleDownload = () => {
@@ -114,29 +115,36 @@ const Home = () => {
 
   return (
     <main className="home-root">
-      {/* ===== HERO ===== */}
+      {/* HERO */}
       <section id="home" className="hero-min" aria-label="Hero">
         <div className="hero-min__bg" aria-hidden="true">
           <span className="pattern" />
           <span className="glow" />
-
         </div>
 
         <div className="hero-min__inner">
           <div className="hero-min__left">
-            <p className="eyebrow">Software Engineer</p>
-            <h1 className="h-title">Batuhan Sevinç</h1>
+            <p className="eyebrow">Full-Stack Software Engineer</p>
+
+            <h1 className="h-title">
+              Batuhan
+              <br />
+              <span className="accent">Sevinç</span>
+            </h1>
+
             <p className="h-sub">
-              I am a <strong>Software Engineer</strong> crafting modern, accessible and responsive interfaces using{" "}
-              <strong>React, Angular, Java & Flutter</strong>, while also developing robust backend solutions.
+              I build large-scale web, mobile, and backend systems —{" "}
+              <strong>Angular, React & Flutter</strong> on the front,{" "}
+              <strong>Java & Spring Boot</strong> on the back. 5+ years shipping
+              production apps at banks and insurance companies.
             </p>
 
             <div className="cta">
-              <div className="btn primary" onClick={handleDownload}>
-                📄 Download CV
-              </div>
+              <button className="btn primary" onClick={handleDownload}>
+                Download CV
+              </button>
               <a href="#projects" className="btn ghost">
-                View Projects
+                View Projects ↓
               </a>
             </div>
 
@@ -146,72 +154,78 @@ const Home = () => {
                 <span>Years</span>
               </li>
               <li>
-                <strong>7+</strong>
+                <strong>10+</strong>
                 <span>Projects</span>
               </li>
               <li>
-                <strong>5+</strong>
+                <strong>8+</strong>
                 <span>Articles</span>
+              </li>
+              <li>
+                <strong>4</strong>
+                <span>Stacks</span>
               </li>
             </ul>
           </div>
 
           <div className="hero-min__right">
-            <figure className="portrait" role="img" aria-label="Profile">
+            <figure className="portrait" aria-label="Batuhan Sevinç">
               <img src={myImage} alt="Batuhan Sevinç" />
             </figure>
           </div>
         </div>
 
-        <a href="#about" className="scroll-hint" aria-label="Scroll to About">
+        <a href="#about" className="scroll-hint" aria-label="Scroll down">
           <span className="wheel" />
         </a>
       </section>
 
-      {/* ===== ABOUT (kart içinde) ===== */}
-      <section id="about" className="about-min fade-in" aria-label="About">
+      {/* ABOUT MINI */}
+      <section id="about" className="about-min" aria-label="About">
         <div className="about-min__inner">
           <div className="about-card">
             <div className="about-min__copy">
-              <span className="eyebrow">About</span>
-              <h2 className="about-min__title">See full profile →</h2>
+              <span className="eyebrow" style={{ letterSpacing: "2px" }}>
+                About Me
+              </span>
+              <h2 className="about-min__title">
+                Full-Stack Engineer — Web, Mobile & Backend
+              </h2>
               <p className="about-min__desc">
-                I’m a frontend developer who treats code as a language and
-                products as experiences. I value clarity, performance and
-                delightful UI details. I keep up with modern stacks and ship
-                clean, accessible and responsive interfaces.
+                5+ years of experience building mission-critical applications at
+                financial institutions and insurance companies. I work across
+                the full stack: Angular and React on the frontend, Java and
+                Spring Boot on the backend, and Flutter for cross-platform
+                mobile — with a constant focus on clean architecture,
+                performance, and real business impact.
               </p>
-              <ul className="about-min__skills" aria-label="Tech stack">
-                <li>React</li>
-                <li>TypeScript</li>
-                <li>Redux</li>
-                <li>SCSS</li>
-                <li>Flutter</li>
-                <li>Angular</li>
+              <ul className="about-min__skills">
+                {[
+                  "Angular",
+                  "React",
+                  "TypeScript",
+                  "Java",
+                  "Spring Boot",
+                  "Flutter",
+                  "PL/SQL",
+                ].map((s) => (
+                  <li key={s}>{s}</li>
+                ))}
               </ul>
               <div className="about-min__actions">
-                <a
-                  href="/about"
-                  className="btn primary"
-                  aria-label="Go to full profile"
-                >
-                  See Full Profile
-                </a>
-                <a
-                  href="/publications"
-                  className="btn ghost"
-                  aria-label="Go to articles"
-                >
+                <Link to="/about" className="btn primary">
+                  Full Profile →
+                </Link>
+                <Link to="/publications" className="btn ghost">
                   Articles
-                </a>
+                </Link>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* ===== ARTICLES ===== */}
-      {/* ===== ARTICLES ===== */}
+      {/* ARTICLES */}
       <section id="articles" className="section">
         <div className="section-inner">
           <div className="section-head">
@@ -230,13 +244,13 @@ const Home = () => {
         </div>
       </section>
 
-      {/* ===== PROJECTS ===== */}
+      {/* PROJECTS */}
       <section id="projects" className="section alt">
         <div className="section-inner">
           <div className="section-head">
             <h2>Featured Projects</h2>
             <Link to="/project" className="link">
-              See all projects →
+              See all →
             </Link>
           </div>
           <ProjectCard props={projects} showHead={false} />

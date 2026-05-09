@@ -1,7 +1,6 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const articleCard = ({ title, description, image, date, article }) => {
+const ArticleCard = ({ title, description, image, date, article }) => {
   const navigate = useNavigate();
 
   const open = () => {
@@ -38,4 +37,4 @@ const articleCard = ({ title, description, image, date, article }) => {
   );
 };
 
-export default articleCard;
+export default ArticleCard;
